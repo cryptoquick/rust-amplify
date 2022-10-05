@@ -2,18 +2,18 @@
 name = "amplify_derive"
 version = "2.11.2"
 description = "Amplifying Rust language capabilities: derive macros for the 'amplify' library"
-authors = ["Dr. Maxim Orlovsky <orlovsky@pandoracore.com>", "Elichai Turkel <elichai.turkel@gmail.com>"]
+authors = [
+    "Dr. Maxim Orlovsky <orlovsky@pandoracore.com>",
+    "Elichai Turkel <elichai.turkel@gmail.com>",
+]
 keywords = ["generics", "derive", "wrap", "patterns"]
 categories = ["data-structures", "rust-patterns"]
 repository = "https://github.com/LNP-BP/rust-amplify"
 homepage = "https://github.com/LNP-BP"
 license = "MIT"
 readme = "README.md"
-edition = "2018"
-include = [
-    "**/*.rs",
-    "Cargo.toml",
-]
+edition = "2021"
+include = ["**/*.rs", "Cargo.toml"]
 
 [lib]
 proc-macro = true

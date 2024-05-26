@@ -1,6 +1,4 @@
 #[macro_use]
-extern crate criterion;
-
 use criterion::{black_box, Criterion};
 
 use amplify_num::u1024;
@@ -35,35 +33,27 @@ fn criterion_posit32(c: &mut Criterion) {
     let x = Posit32::from(12.5);
     let y = Posit32::from(117.334);
 
-    c.bench_function("posit32_add", move |c| {
-        c.iter(|| black_box(x) + black_box(y))
-    });
-    c.bench_function("posit32_sub", move |c| {
-        c.iter(|| black_box(x) - black_box(y))
-    });
-    c.bench_function("posit32_mul", move |c| {
-        c.iter(|| black_box(x) * black_box(y))
-    });
-    c.bench_function("posit32_div", move |c| {
-        c.iter(|| black_box(x) / black_box(y))
-    });
+    c.bench_function("posit32_add", |c| c.iter(|| black_box(&x) + black_box(&y)));
+    c.bench_function("posit32_sub", |c| c.iter(|| black_box(&x) - black_box(&y)));
+    c.bench_function("posit32_mul", |c| c.iter(|| black_box(&x) * black_box(&y)));
+    c.bench_function("posit32_div", |c| c.iter(|| black_box(&x) / black_box(&y)));
 }
 
 fn criterion_softposit32(c: &mut Criterion) {
     let x = P32::from(12.5);
     let y = P32::from(117.334);
 
-    c.bench_function("softposit32_add", move |c| {
-        c.iter(|| black_box(x) + black_box(y))
+    c.bench_function("softposit32_add", |c| {
+        c.iter(|| black_box(&x) + black_box(&y))
     });
-    c.bench_function("softposit32_sub", move |c| {
-        c.iter(|| black_box(x) - black_box(y))
+    c.bench_function("softposit32_sub", |c| {
+        c.iter(|| black_box(&x) - black_box(&y))
     });
-    c.bench_function("softposit32_mul", move |c| {
-        c.iter(|| black_box(x) * black_box(y))
+    c.bench_function("softposit32_mul", |c| {
+        c.iter(|| black_box(&x) * black_box(&y))
     });
-    c.bench_function("softposit32_div", move |c| {
-        c.iter(|| black_box(x) / black_box(y))
+    c.bench_function("softposit32_div", |c| {
+        c.iter(|| black_box(&x) / black_box(&y))
     });
 }
 

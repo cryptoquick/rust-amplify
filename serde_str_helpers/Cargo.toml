@@ -2,7 +2,7 @@
 name = "serde_str_helpers"
 version = "0.1.2"
 authors = ["Martin Habovstiak <martin.habovstiak@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "Helpers for using serde with strings"
 keywords = ["serde", "deserialization", "zero-copy", "patterns"]
 categories = ["data-structures", "rust-patterns", "no-std"]
